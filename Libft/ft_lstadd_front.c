@@ -23,3 +23,22 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		*lst = new;
 	}
 }
+
+/*
+
+//cc ft_lstadd_front.c ft_lstnew.c ft_lstadd_back.c ft_putlst_fd.c ft_putnbr_fd.c ft_lstlast.c ft_putendl_fd.c
+
+int	main(void)
+{
+	t_list *lst;
+	t_list *new1;
+	t_list *new2;
+
+	lst = NULL;
+	new1 = ft_lstnew(1);
+	new2 = ft_lstnew(2);
+	ft_lstadd_front(&lst, new1);
+	ft_lstadd_front(&lst, new2);
+	ft_putlst_fd(lst, 1);
+}
+*/
