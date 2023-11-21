@@ -91,6 +91,8 @@ int main(int argc, char *argv[])
     }
     b_stack = NULL;
     ft_putlst_fd(a_stack, 1);
+    if (isduplicate_in_lst(&a_stack, argc) == true)
+        ft_putstr_fd("DUPLICATE SPOTTED!", 1);
     ft_lstclear(&a_stack);
     return (0);
 }

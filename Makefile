@@ -15,26 +15,28 @@ NAME := push_swap
 CC := cc
 CFLAGS := -Wall -Wextra -Werror -g
 
-SRCS := push_swap.c
+SRCS := push_swap.c operations.c utils.c
 
 OBJS := $(SRCS:.c=.o)
+
+.SILENT:
+
+all: $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	cd Libft/ && make
+	cd Libft/ && make -s
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) ./Libft/libft.a
-
-all: $(NAME)
 
 clean:
 	rm -rf $(OBJS)
-	cd Libft/ && make clean
+	cd Libft/ && make -s clean
 
 fclean: clean
 	rm -rf $(NAME)
-	cd Libft/ && make fclean
+	cd Libft/ && make -s fclean
 
 re: fclean all
 
