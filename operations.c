@@ -71,11 +71,6 @@ void	ft_reverse_rotate(t_list **lst)
 	}
 }
 
-// cc operations.c Libft/ft_lstnew.c Libft/ft_putlst_fd.c 
-// Libft/ft_lstadd_front.c Libft/ft_putnbr_fd.c Libft/ft_putendl_fd.c 
-// Libft/ft_lstsize.c Libft/ft_lstadd_back.c Libft/ft_lstlast.c 
-// Libft/ft_lstclear.c Libft/ft_lstdelone.c
-
 // #include <stdio.h>
 
 // int main(void)
