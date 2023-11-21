@@ -17,11 +17,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-// typedef struct s_list
-// {
-// 	int             content;
-//     int             index;
-// 	struct s_list	*next;
-// }					t_list;
+void	ft_swap(t_list **lst);
+void	ft_push(t_list **lst1, t_list **lst2);
+void	ft_rotate(t_list **lst);
+void	ft_reverse_rotate(t_list **lst);
 
 #endif

@@ -13,7 +13,7 @@
 NAME := push_swap
 
 CC := cc
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -g
 
 SRCS := push_swap.c
 
@@ -23,16 +23,18 @@ OBJS := $(SRCS:.c=.o)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	cd Libft/ && make
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) ./Libft/libft.a
 
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJS) $(BONUS_OBJS)
+	rm -rf $(OBJS)
+	cd Libft/ && make clean
 
 fclean: clean
 	rm -rf $(NAME)
+	cd Libft/ && make fclean
 
 re: fclean all
 
