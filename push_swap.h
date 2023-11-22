@@ -23,9 +23,10 @@ void	ft_swap(t_list **lst);
 void	ft_push(t_list **lst1, t_list **lst2);
 void	ft_rotate(t_list **lst);
 void	ft_reverse_rotate(t_list **lst);
-bool    ft_isduplicate_in_lst(t_list **lst, int nbr);
+bool	ft_isduplicate(char **strarr);
 bool    ft_isnumber(char *str);
 bool    ft_isint(char *str);
-void	assign_index(t_list **lst);
+int     get_index(char **strarr, int nbr);
+t_list  *ft_lstnew_with_index(int content, int index);
 
 #endif

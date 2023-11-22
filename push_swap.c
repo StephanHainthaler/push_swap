@@ -34,13 +34,13 @@ t_list  *make_stack_arg2(t_list **stack, char *str)
 	i = 0;
 	while (strarr[i] != NULL)
 	{
-		if (ft_isnumber(strarr[i]) == false) //|| ft_isduplicate_in_lst(stack, ft_atoi(strarr[i])) == true)
+		if (ft_isnumber(strarr[i]) == false || ft_isduplicate(strarr) == true)
 		{	
 			if (stack)
 				ft_lstclear(stack);
 			return (free_strarr(strarr, i), NULL);
 		}
-		new = ft_lstnew(ft_atoi(strarr[i]));
+		new = ft_lstnew_with_index(ft_atoi(strarr[i]), get_index(strarr, ft_atoi(strarr[i])));
 		if (new == NULL)
 		{   
 			if (stack)
@@ -62,13 +62,13 @@ t_list  *make_stack(t_list **stack, char **strarr, int index)
 	i = 1;
 	while (i < index)
 	{
-		if (ft_isnumber(strarr[i]) == false)
+		if (ft_isnumber(strarr[i]) == false || ft_isduplicate(strarr) == true)
 		{	
 			if (stack)
 				ft_lstclear(stack);
 			return (NULL);
 		}
-		new = ft_lstnew(ft_atoi(strarr[i]));
+		new = ft_lstnew_with_index(ft_atoi(strarr[i]), get_index(strarr, ft_atoi(strarr[i])));
 		if (new == NULL)
 		{
 			if (stack)
@@ -84,10 +84,10 @@ t_list  *make_stack(t_list **stack, char **strarr, int index)
 int main(int argc, char *argv[])
 {
 	t_list  *a_stack;
-	t_list  *b_stack;
+	//t_list  *b_stack;
 
 	a_stack = NULL;
-	b_stack = NULL;
+	//b_stack = NULL;
 	if (argc <= 1)
 	{
 			write(2, "Error\n", 6);
@@ -100,7 +100,6 @@ int main(int argc, char *argv[])
 	if (a_stack == NULL)
 		return (write(2, "Error\n", 6), 0);
 	ft_putlst_fd(a_stack, 1);
-	assign_index(&a_stack);
 	ft_lstclear(&a_stack);
 	return (0);
 }

@@ -12,21 +12,23 @@
 
 #include "push_swap.h"
 
-bool	ft_isduplicate_in_lst(t_list **lst, int nbr)
+bool	ft_isduplicate(char **strarr)
 {
-	t_list	*current_node;
-	int		i;
+	int	nbr;
+	int	i;
+	int j;
 
-	current_node = *lst;
 	i = 0;
-	while (current_node)
+	while (strarr[i] != NULL)
 	{
-		current_node = *lst;
-		if (current_node->content == nbr)
-			return (true);
-		if (current_node->next == NULL)
-			break ;
-		*lst = current_node->next;
+		nbr = ft_atoi(strarr[i]);
+		j = 1 + i;
+		while (strarr[j] != NULL)
+		{
+			if (ft_atoi(strarr[j]) == nbr)
+				return (true);
+			j++;	
+		}
 		i++;
 	}
 	return (false);
@@ -86,36 +88,35 @@ bool	ft_isnumber(char *str)
 	return (true);
 }
 
-void	assign_index(t_list **lst)
+int	get_index(char **strarr, int nbr)
 {
-	t_list	*current_node;
-	int		i;
-	int		rank;
-	int		count;
+	int	i;
+	int	count;
 
-	count = INT_MIN;
-	rank = 1;
+	count = 0;
 	i = 0;
-	while (i < ft_lstsize(*lst))
+	while (strarr[i] != NULL)
 	{
-		current_node = *lst;
-		while (count == INT_MAX || i == ft_lstsize(*lst) - 1)
-		{
-			current_node = *lst;
-			if (current_node->content == count)
-			{
-				current_node->index = rank;
-				rank++;
-				break ;
-			}
+		if (ft_atoi(strarr[i]) <= nbr)
 			count++;
-			if (current_node->next == NULL)
-				break ;
-			*lst = current_node->next;
-		}
 		i++;
 	}
+	return (count);
 }
+
+t_list	*ft_lstnew_with_index(int content, int index)
+{
+	t_list	*new_lst;
+
+	new_lst = (t_list *)malloc(1 * sizeof(t_list));
+	if (!new_lst)
+		return (NULL);
+	new_lst->content = content;
+	new_lst->index = index;
+	new_lst->next = NULL;
+	return (new_lst);
+}
+
 // main for testing ft_isnumber() & ft_isint()
 // #include <stdio.h>
 
