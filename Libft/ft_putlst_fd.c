@@ -20,6 +20,8 @@ void	ft_putlst_fd(t_list *lst, int fd)
 	while (temp != NULL)
 	{
 		ft_putnbr_fd(temp->content, fd);
+		ft_putstr_fd("\t", fd);
+		ft_putnbr_fd(temp->index, fd);
 		ft_putendl_fd("", fd);
 		temp = temp->next;
 	}

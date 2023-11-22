@@ -86,6 +86,36 @@ bool	ft_isnumber(char *str)
 	return (true);
 }
 
+void	assign_index(t_list **lst)
+{
+	t_list	*current_node;
+	int		i;
+	int		rank;
+	int		count;
+
+	count = INT_MIN;
+	rank = 1;
+	i = 0;
+	while (i < ft_lstsize(*lst))
+	{
+		current_node = *lst;
+		while (count == INT_MAX || i == ft_lstsize(*lst) - 1)
+		{
+			current_node = *lst;
+			if (current_node->content == count)
+			{
+				current_node->index = rank;
+				rank++;
+				break ;
+			}
+			count++;
+			if (current_node->next == NULL)
+				break ;
+			*lst = current_node->next;
+		}
+		i++;
+	}
+}
 // main for testing ft_isnumber() & ft_isint()
 // #include <stdio.h>
 
