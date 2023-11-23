@@ -18,8 +18,8 @@
 
 typedef struct s_list
 {
-	int             content;
-    int             index;
+	int				content;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -58,7 +58,7 @@ void	ft_putstr_fd(char *str, int fd);
 void	ft_putendl_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putlst_fd(t_list *lst, int fd);
-t_list	*ft_lstnew(int content);
+t_list	*ft_lstnew(int content, int index);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);

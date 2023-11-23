@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(int content, int index)
 {
 	t_list	*new_lst;
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (!new_lst)
 		return (NULL);
 	new_lst->content = content;
+	new_lst->index = index;
 	new_lst->next = NULL;
 	return (new_lst);
 }

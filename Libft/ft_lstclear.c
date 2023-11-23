@@ -20,9 +20,9 @@ void	ft_lstclear(t_list **lst)
 		return ;
 	while (*lst != NULL)
 	{
-			current_node = *lst;
-			if (current_node != NULL)
-				ft_lstdelone(lst, current_node);
+		current_node = *lst;
+		if (current_node != NULL)
+			ft_lstdelone(lst, current_node);
 	}
 	*lst = NULL;
 }

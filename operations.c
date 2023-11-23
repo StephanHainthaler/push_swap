@@ -16,28 +16,36 @@ void	ft_swap(t_list **lst)
 {
 	t_list	*first_node;
 	t_list	*second_node;
-	int		temp;
+	int		temp_content;
+	int		temp_index;
 
 	if (ft_lstsize(*lst) < 2)
 		return ;
 	first_node = *lst;
 	second_node = first_node->next;
-	temp = first_node->content;
+	temp_content = first_node->content;
+	temp_index = first_node->index;
 	first_node->content = second_node->content;
-	second_node->content = temp;
+	first_node->index = second_node->index;
+	second_node->content = temp_content;
+	second_node->index = temp_index;
 }
 
 void	ft_push(t_list **lst1, t_list **lst2)
 {
 	t_list	*first_node;
 	t_list	*new;
-	int		temp;
+	int		temp_content;
+	int		temp_index;
 
 	if (ft_lstsize(*lst1) < 1)
 		return ;
 	first_node = *lst1;
-	temp = first_node->content;
-	new = ft_lstnew(temp);
+	temp_content = first_node->content;
+	temp_index = first_node->index;
+	new = ft_lstnew(temp_content, temp_index);
+	if (new == NULL)
+		return ;
 	ft_lstadd_front(lst2, new);
 	if (first_node != NULL)
 		ft_lstdelone(lst1, first_node);

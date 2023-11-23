@@ -12,13 +12,11 @@
 
 #include "push_swap.h"
 
-bool	ft_isduplicate(char **strarr)
+bool	ft_isduplicate(char **strarr, int i)
 {
 	int	nbr;
-	int	i;
-	int j;
+	int	j;
 
-	i = 0;
 	while (strarr[i] != NULL)
 	{
 		nbr = ft_atoi(strarr[i]);
@@ -27,7 +25,7 @@ bool	ft_isduplicate(char **strarr)
 		{
 			if (ft_atoi(strarr[j]) == nbr)
 				return (true);
-			j++;	
+			j++;
 		}
 		i++;
 	}
@@ -82,6 +80,8 @@ bool	ft_isnumber(char *str)
 				return (false);
 			i++;
 		}
+		if (str[i] != '\0')
+			return (false);
 	}
 	if (ft_isint(str) == false)
 		return (false);
@@ -104,17 +104,17 @@ int	get_index(char **strarr, int nbr)
 	return (count);
 }
 
-t_list	*ft_lstnew_with_index(int content, int index)
+void	free_strarr(char **strarr)
 {
-	t_list	*new_lst;
+	int	i;
 
-	new_lst = (t_list *)malloc(1 * sizeof(t_list));
-	if (!new_lst)
-		return (NULL);
-	new_lst->content = content;
-	new_lst->index = index;
-	new_lst->next = NULL;
-	return (new_lst);
+	i = 0;
+	while (strarr[i] != NULL)
+	{
+		free(strarr[i]);
+		i++;
+	}
+	free(strarr);
 }
 
 // main for testing ft_isnumber() & ft_isint()
