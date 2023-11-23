@@ -26,9 +26,21 @@ bool	ft_isnumber(char *str);
 bool	ft_isint(char *str);
 int		get_index(char **strarr, int nbr);
 void	free_strarr(char **strarr);
+int     get_biggest_index(t_list *lst);
 void	ft_swap(t_list **lst);
+void	sa(t_list **a_stack);
+void	sb(t_list **b_stack);
+void	ss(t_list **a_stack, t_list **b_stack);
 void	ft_push(t_list **lst1, t_list **lst2);
+void	pa(t_list **a_stack, t_list **b_stack);
+void	pb(t_list **a_stack, t_list **b_stack);
 void	ft_rotate(t_list **lst);
+void	ra(t_list **a_stack);
+void	rb(t_list **b_stack);
+void	rr(t_list **a_stack, t_list **b_stack);
 void	ft_reverse_rotate(t_list **lst);
+void	rra(t_list **a_stack);
+void	rrb(t_list **b_stack);
+void	rrr(t_list **a_stack, t_list **b_stack);
 
 #endif

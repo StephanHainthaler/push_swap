@@ -70,14 +70,14 @@ t_list	*make_stack(t_list **stack, char **strarr, int index)
 	return (*stack);
 }
 
+#include <stdio.h>
+
 int	main(int argc, char *argv[])
 {
 	t_list	*a_stack;
-	//t_list	*b_stack;
 	char	**strarr;
 
 	a_stack = NULL;
-	//b_stack = NULL;
 	if (argc <= 1)
 		return (0);
 	if (argc == 2)
@@ -92,6 +92,7 @@ int	main(int argc, char *argv[])
 	if (a_stack == NULL)
 		return (write(2, "Error\n", 6), 0);
 	ft_putlst_fd(a_stack, 1);
+	printf("Biggest Index: %i\n", get_biggest_index(a_stack));
 	ft_lstclear(&a_stack);
 	return (0);
 }

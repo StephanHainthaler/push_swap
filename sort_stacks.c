@@ -10,4 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
+int	get_biggest_index(t_list *lst)
+{
+	int	max;
+	
+	max = 0;
+	while (lst)
+	{
+		if (lst->index > max)
+			max = lst->index;
+		if (lst->next == NULL)
+			return (max);
+		lst = lst->next;
+	}
+	return (max);
+}
+
+void	ft_putbits(int nbr)
+{
+	
+}
+
+void	radix_sort(t_list *a_stack, t_list *b_stack)
+{
+	int index;
+	int	max_index;
+
+	max_index = get_biggest_index(a_stack);
+	index = 1;
+
+}
+
+
+// t_list	*sort_stack(t_list *a_stack)
+// {
+// 	t_list	*b_stack;
+
+// 	b_stack = NULL;
+// 	radix_sort(a_stack, b_stack);
+// 	return (a_stack);
+// }
