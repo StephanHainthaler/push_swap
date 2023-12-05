@@ -12,25 +12,25 @@
 
 #include "push_swap.h"
 
-void	two_sort(t_list **a_stack)
-{
+// void	two_sort(t_list **a_stack)
+// {
 
-}
+// }
 
-void	three_sort(t_list **a_stack, t_list **b_stack)
-{
+// void	three_sort(t_list **a_stack, t_list **b_stack)
+// {
 
-}
+// }
 
-void	four_sort(t_list **a_stack, t_list **b_stack)
-{
+// void	four_sort(t_list **a_stack, t_list **b_stack)
+// {
 
-}
+// }
 
-void	five_sort(t_list **a_stack, t_list **b_stack)
-{
+// void	five_sort(t_list **a_stack, t_list **b_stack)
+// {
 
-}
+// }
 
 void	radix_sort(t_list **a_stack, t_list **b_stack)
 {
