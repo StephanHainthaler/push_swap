@@ -28,58 +28,46 @@ int	get_biggest_index(t_list *lst)
 	return (max);
 }
 
-int	radix_sort(t_list **a_stack, t_list **b_stack)
+bool	is_lst_sorted(t_list *lst)
 {
-	t_list	*current_node;
-	int		i;
-	int		j;
-	int		max_index;
-	int		size;
-
-	max_index = get_biggest_index(*a_stack);
-	current_node = *a_stack;
-	size = ft_lstsize(current_node);
-	i = 0;
-	while (i < max_index)
+	int	smaller_index;
+	smaller_index = 0;
+	while (lst)
 	{
-		j = 0;
-		while (j < size)
-		{
-			current_node = *a_stack;
-			if (((current_node->index >> i) & 1) == 1)
-				ra(a_stack);
-			else
-			{
-				if (pb(a_stack, b_stack) == -1)
-					return (-1);
-			}
-			j++;
-		}
-		while (ft_lstsize(*b_stack) >= 1)
-		{
-			if (pa(a_stack, b_stack) == -1)
-				return (-1);
-		}
-		i++;
+		if (lst->index < smaller_index)
+			return (false);
+		if (lst->next == NULL)
+			return (true);
+		smaller_index = lst->index;
+		lst = lst->next;
 	}
-	return (0);
+	return (true);
 }
 
-
-int	sort_stack(t_list *a_stack)
+void	sort_stack(t_list *a_stack)
 {
 	t_list	*b_stack;
 
 	b_stack = NULL;
 	ft_putlst_fd(a_stack, 1);
 	write(1, "\n", 1);
-	radix_sort(&a_stack, &b_stack);
+	if (ft_lstsize(a_stack) == 1)
+		return ;
+	if (ft_lstsize(a_stack) == 2)
+		return ;
+	if (ft_lstsize(a_stack) == 3)
+		return ;
+	if (ft_lstsize(a_stack) == 4)
+		return ;
+	if (ft_lstsize(a_stack) == 5)
+		return ;
+	if (ft_lstsize(a_stack) <= 6)
+		radix_sort(&a_stack, &b_stack);
 	ft_putlst_fd(a_stack, 1);
 	write(1, "\n", 1);
 	ft_putlst_fd(b_stack, 1);
 	write(1, "\n", 1);
 	//ft_lstclear(&b_stack);
-	return (0);
 }
 
 // #include <stdio.h>

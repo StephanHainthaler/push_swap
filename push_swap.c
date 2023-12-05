@@ -91,8 +91,7 @@ int	main(int argc, char *argv[])
 		a_stack = make_stack(&a_stack, argv, argc);
 	if (a_stack == NULL)
 		return (write(2, "Error\n", 6), 0);
-	if (sort_stack(a_stack) == -1)
-		return (write(2, "Error\n", 6), 0);
+	sort_stack(a_stack);
 	ft_lstclear(&a_stack);
 	return (0);
 }
