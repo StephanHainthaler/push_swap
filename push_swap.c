@@ -70,8 +70,6 @@ t_list	*make_stack(t_list **stack, char **strarr, int index)
 	return (*stack);
 }
 
-#include <stdio.h>
-
 int	main(int argc, char *argv[])
 {
 	t_list	*a_stack;

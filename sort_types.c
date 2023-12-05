@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void	two_sort(t_list **a_stack, t_list **b_stack)
+void	two_sort(t_list **a_stack)
 {
-	
+
 }
 
 void	three_sort(t_list **a_stack, t_list **b_stack)
@@ -44,7 +44,7 @@ void	radix_sort(t_list **a_stack, t_list **b_stack)
 	i = 0;
 	while (i < get_biggest_index(*a_stack))
 	{
-		if (is_lst_sorted(*a_stack) == true)
+		if (is_sorted(*a_stack) == true)
 			return ;
 		j = 0;
 		while (j++ < node_size)
