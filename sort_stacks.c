@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	get_biggest_index(t_list *lst)
 {
@@ -26,7 +25,6 @@ int	get_biggest_index(t_list *lst)
 			return (max);
 		lst = lst->next;
 	}
-	printf("---%d---\n", max);
 	return (max);
 }
 
@@ -52,14 +50,14 @@ void	sort_stack(t_list *a_stack)
 	t_list	*b_stack;
 
 	b_stack = NULL;
-	// ft_putlst_fd(a_stack, 1);
-	// write(1, "\n", 1);
-	// if (ft_lstsize(a_stack) == 1)
-	// 	return ;
-	// if (ft_lstsize(a_stack) == 2)
-	// 	two_sort(&a_stack);
-	// if (ft_lstsize(a_stack) == 3)
-	// 	three_sort(&a_stack, &b_stack);
+	ft_putlst_fd(a_stack, 1);
+	write(1, "\n", 1);
+	if (ft_lstsize(a_stack) == 1)
+		return ;
+	if (ft_lstsize(a_stack) == 2)
+		two_sort(&a_stack);
+	if (ft_lstsize(a_stack) == 3)
+		three_sort(&a_stack);
 	// if (ft_lstsize(a_stack) == 4)
 	// 	four_sort(&a_stack, &b_stack);
 	// if (ft_lstsize(a_stack) == 5)
@@ -67,8 +65,8 @@ void	sort_stack(t_list *a_stack)
 	// if (ft_lstsize(a_stack) <= 6)
 	// 	radix_sort(&a_stack, &b_stack);
 	radix_sort(&a_stack, &b_stack);
-	// ft_putlst_fd(a_stack, 1);
-	// write(1, "\n", 1);
+	ft_putlst_fd(a_stack, 1);
+	write(1, "\n", 1);
 	// ft_putlst_fd(b_stack, 1);
 	// write(1, "\n", 1);
 }

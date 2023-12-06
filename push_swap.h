@@ -29,7 +29,7 @@ void	free_strarr(char **strarr);
 void	sort_stack(t_list *a_stack);
 bool	is_sorted(t_list *lst);
 void	two_sort(t_list **a_stack);
-void	three_sort(t_list **a_stack, t_list **b_stack);
+void	three_sort(t_list **a_stack);
 void	four_sort(t_list **a_stack, t_list **b_stack);
 void	five_sort(t_list **a_stack, t_list **b_stack);
 void	radix_sort(t_list **a_stack, t_list **b_stack);

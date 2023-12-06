@@ -12,15 +12,43 @@
 
 #include "push_swap.h"
 
-// void	two_sort(t_list **a_stack)
-// {
+void	two_sort(t_list **a_stack)
+{
+	if (is_sorted(*a_stack) == true)
+		return ;
+	else
+		sa(a_stack);
+}
 
-// }
+void	three_sort(t_list **a_stack)
+{
+	t_list	*node;
+	int		first;
+	int		second;
+	int		third;
+	
+	node = *a_stack;
+	first = node->index;
+	second = node->next->index;
+	third = node->next->next->index;
+	if (first < second && second > third && first < third)
+	{
+		sa(a_stack);
+		ra(a_stack);
+	}
+	if (first > second && second < third && first < third)
+		sa(a_stack);
+	if (first < second && second > third && first > third)
+		rra(a_stack);
+	if (first > second && second < third && first > third)
+		ra(a_stack);
+	if (first > second && second > third && first > third)
+	{
+		sa(a_stack);
+		rra(a_stack);
+	}
+}
 
-// void	three_sort(t_list **a_stack, t_list **b_stack)
-// {
-
-// }
 
 // void	four_sort(t_list **a_stack, t_list **b_stack)
 // {
