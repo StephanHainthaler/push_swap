@@ -12,6 +12,22 @@
 
 #include "push_swap.h"
 
+int	get_smallest_index(t_list *lst)
+{
+	int	min;
+
+	min = INT_MAX;
+	while (lst)
+	{
+		if (lst->index < min)
+			min = lst->index;
+		if (lst->next == NULL)
+			return (min);
+		lst = lst->next;
+	}
+	return (min);
+}
+
 int	get_biggest_index(t_list *lst)
 {
 	int	max;
@@ -50,7 +66,6 @@ void	sort_stack(t_list *a_stack)
 	t_list	*b_stack;
 
 	b_stack = NULL;
-	ft_putlst_fd(a_stack, 1);
 	write(1, "\n", 1);
 	if (ft_lstsize(a_stack) == 1)
 		return ;
@@ -58,15 +73,11 @@ void	sort_stack(t_list *a_stack)
 		two_sort(&a_stack);
 	if (ft_lstsize(a_stack) == 3)
 		three_sort(&a_stack);
-	// if (ft_lstsize(a_stack) == 4)
-	// 	four_sort(&a_stack, &b_stack);
-	// if (ft_lstsize(a_stack) == 5)
-	// 	five_sort(&a_stack, &b_stack);
-	// if (ft_lstsize(a_stack) <= 6)
-	// 	radix_sort(&a_stack, &b_stack);
-	radix_sort(&a_stack, &b_stack);
-	ft_putlst_fd(a_stack, 1);
+	if (ft_lstsize(a_stack) == 4)
+		four_sort(&a_stack, &b_stack);
+	if (ft_lstsize(a_stack) == 5)
+		five_sort(&a_stack, &b_stack);
+	if (ft_lstsize(a_stack) >= 6)
+		radix_sort(&a_stack, &b_stack);
 	write(1, "\n", 1);
-	// ft_putlst_fd(b_stack, 1);
-	// write(1, "\n", 1);
 }

@@ -49,15 +49,53 @@ void	three_sort(t_list **a_stack)
 	}
 }
 
-// void	four_sort(t_list **a_stack, t_list **b_stack)
-// {
+void	four_sort(t_list **a_stack, t_list **b_stack)
+{
+	t_list	*current_node;
+	int		i;
 
-// }
+	current_node = *a_stack;
+	if (is_sorted(*a_stack) == true)
+		return ;
+	i = 0;
+	while (*a_stack)
+	{
+		if (current_node->index == 1)
+		{
+			pb(a_stack, b_stack);
+			break ;
+		}
+		if (current_node->next == NULL)
+			break ;
+		current_node = current_node->next;
+	}
+	three_sort(a_stack);
+	pa(a_stack, b_stack);
+}
 
-// void	five_sort(t_list **a_stack, t_list **b_stack)
-// {
+void	five_sort(t_list **a_stack, t_list **b_stack)
+{
+	t_list	*current_node;
+	int		i;
 
-// }
+	current_node = *a_stack;
+	if (is_sorted(*a_stack) == true)
+		return ;
+	i = 0;
+	while (*a_stack)
+	{
+		if (current_node->index == 1)
+		{
+			pb(a_stack, b_stack);
+			break ;
+		}
+		if (current_node->next == NULL)
+			break ;
+		current_node = current_node->next;
+	}
+	four_sort(a_stack, b_stack);
+	pa(a_stack, b_stack);
+}
 
 void	radix_sort(t_list **a_stack, t_list **b_stack)
 {
