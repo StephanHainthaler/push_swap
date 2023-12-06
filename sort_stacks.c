@@ -12,6 +12,23 @@
 
 #include "push_swap.h"
 
+int	get_smallest_index_pos(t_list *lst, int smallest_index)
+{
+	int	pos;
+
+	pos = 0;
+	while (lst)
+	{
+		pos++;
+		if (lst->index == smallest_index)
+			return (pos);
+		if (lst->next == NULL)
+			return (pos);
+		lst = lst->next;
+	}
+	return (pos);
+}
+
 int	get_smallest_index(t_list *lst)
 {
 	int	min;
@@ -66,7 +83,6 @@ void	sort_stack(t_list *a_stack)
 	t_list	*b_stack;
 
 	b_stack = NULL;
-	write(1, "\n", 1);
 	if (ft_lstsize(a_stack) == 1)
 		return ;
 	if (ft_lstsize(a_stack) == 2)
@@ -79,5 +95,4 @@ void	sort_stack(t_list *a_stack)
 		five_sort(&a_stack, &b_stack);
 	if (ft_lstsize(a_stack) >= 6)
 		radix_sort(&a_stack, &b_stack);
-	write(1, "\n", 1);
 }

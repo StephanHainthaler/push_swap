@@ -52,23 +52,23 @@ void	three_sort(t_list **a_stack)
 void	four_sort(t_list **a_stack, t_list **b_stack)
 {
 	t_list	*current_node;
+	int		smallest_index;
 	int		i;
 
 	current_node = *a_stack;
 	if (is_sorted(*a_stack) == true)
 		return ;
-	i = 0;
-	while (*a_stack)
+	smallest_index = get_smallest_index(*a_stack);
+	i = get_smallest_index_pos(*a_stack, smallest_index);
+	while (current_node->index != smallest_index)
 	{
-		if (current_node->index == 1)
-		{
-			pb(a_stack, b_stack);
-			break ;
-		}
-		if (current_node->next == NULL)
-			break ;
-		current_node = current_node->next;
+		if (i == 1 || i == 2)
+			ra(a_stack);
+		if (i == 3 || i == 4)
+			rra(a_stack);
+		current_node = *a_stack;
 	}
+	pb(a_stack, b_stack);
 	three_sort(a_stack);
 	pa(a_stack, b_stack);
 }
@@ -76,23 +76,23 @@ void	four_sort(t_list **a_stack, t_list **b_stack)
 void	five_sort(t_list **a_stack, t_list **b_stack)
 {
 	t_list	*current_node;
+	int		smallest_index;
 	int		i;
 
 	current_node = *a_stack;
 	if (is_sorted(*a_stack) == true)
 		return ;
-	i = 0;
-	while (*a_stack)
+	smallest_index = get_smallest_index(*a_stack);
+	i = get_smallest_index_pos(*a_stack, smallest_index);
+	while (current_node->index != smallest_index)
 	{
-		if (current_node->index == 1)
-		{
-			pb(a_stack, b_stack);
-			break ;
-		}
-		if (current_node->next == NULL)
-			break ;
-		current_node = current_node->next;
+		if (i == 1 || i == 2 || i == 3)
+			ra(a_stack);
+		if (i == 4 || i == 5)
+			rra(a_stack);
+		current_node = *a_stack;
 	}
+	pb(a_stack, b_stack);
 	four_sort(a_stack, b_stack);
 	pa(a_stack, b_stack);
 }

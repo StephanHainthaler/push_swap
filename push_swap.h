@@ -33,6 +33,8 @@ void	three_sort(t_list **a_stack);
 void	four_sort(t_list **a_stack, t_list **b_stack);
 void	five_sort(t_list **a_stack, t_list **b_stack);
 void	radix_sort(t_list **a_stack, t_list **b_stack);
+int		get_smallest_index(t_list *lst);
+int		get_smallest_index_pos(t_list *lst, int smallest_index);
 int		get_biggest_index(t_list *lst);
 void	ft_swap(t_list **lst);
 void	sa(t_list **a_stack);
