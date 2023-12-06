@@ -26,7 +26,7 @@ void	three_sort(t_list **a_stack)
 	int		first;
 	int		second;
 	int		third;
-	
+
 	node = *a_stack;
 	first = node->index;
 	second = node->next->index;
@@ -48,7 +48,6 @@ void	three_sort(t_list **a_stack)
 		rra(a_stack);
 	}
 }
-
 
 // void	four_sort(t_list **a_stack, t_list **b_stack)
 // {
