@@ -15,7 +15,7 @@ NAME := push_swap
 CC := cc
 CFLAGS := -Wall -Wextra -Werror -g
 
-SRCS := push_swap.c utils.c sort_stacks.c sort_types.c op_swap.c op_push.c op_rotate.c op_reverse_rotate.c
+SRCS := push_swap.c ./sorting/utils.c ./sorting/sort_stacks.c ./sorting/sort_types.c ./operations/op_swap.c ./operations/op_push.c ./operations/op_rotate.c ./operations/op_reverse_rotate.c
 
 OBJS := $(SRCS:.c=.o)
 
