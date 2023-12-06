@@ -40,7 +40,7 @@ void	ft_swap(t_list **lst);
 void	sa(t_list **a_stack);
 void	sb(t_list **b_stack);
 void	ss(t_list **a_stack, t_list **b_stack);
-int		ft_push(t_list **lst1, t_list **lst2);
+void	ft_push(t_list **lst1, t_list **lst2);
 void	pa(t_list **a_stack, t_list **b_stack);
 void	pb(t_list **a_stack, t_list **b_stack);
 void	ft_rotate(t_list **lst);

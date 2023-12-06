@@ -14,16 +14,15 @@
 
 void	ft_rotate(t_list **lst)
 {
-	t_list	*first_node;
-	t_list	*last_node;
-
 	if (ft_lstsize(*lst) < 2)
 		return ;
-	first_node = *lst;
-	last_node = ft_lstlast(first_node);
-	*lst = first_node->next;
-	last_node->next = first_node;
-	first_node->next = NULL;
+	while (lst != NULL)
+	{
+		ft_swap(lst);
+		if ((*lst)->next == NULL)
+			break ;
+		lst = &(*lst)->next;
+	}
 }
 
 void	ra(t_list **a_stack)
