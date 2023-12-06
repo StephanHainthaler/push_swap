@@ -17,12 +17,11 @@ void	ft_push(t_list **lst1, t_list **lst2)
 	t_list	*first_node;
 
 	if (ft_lstsize(*lst1) < 1)
-		return (-1);
+		return ;
 	first_node = *lst1;
 	*lst1 = (*lst1)->next;
 	first_node->next = NULL;
 	ft_lstadd_front(lst2, first_node);
-	return (0);
 }
 
 void	pa(t_list **a_stack, t_list **b_stack)
