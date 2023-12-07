@@ -41,6 +41,8 @@ bool	ft_isint(char *str)
 	nbr = 0;
 	sign = 1;
 	i = 0;
+	if (str[0] == '\0')
+		return (false);
 	while (str[i] == ' ' || str[i] == '\f'
 		|| str[i] == '\n' || str[i] == '\r'
 		|| str[i] == '\t' || str[i] == '\v')
