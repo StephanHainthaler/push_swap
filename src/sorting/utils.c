@@ -110,6 +110,8 @@ void	free_strarr(char **strarr)
 {
 	int	i;
 
+	if (strarr == NULL)
+		return ;
 	i = 0;
 	while (strarr[i] != NULL)
 	{
